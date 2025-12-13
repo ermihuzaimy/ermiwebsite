@@ -1,129 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Food – Ermi Safiyyah</title>
 
+<style>
 
-
-nav img {
-    border-radius:10px;
+/* ================= FONT ================= */
+@font-face {
+    font-family: 'MotleyForces';
+    src: url('MotleyForcesRegular-w1rZ3.ttf') format('truetype');
 }
 
-/* ------------------ CLOCK (Updated to match screenshot) ------------------ */
-/* CLOCK */
-#clock {
-  background: #ffd1e8;
-  padding: 4px 12px;
-  border-radius: 8px;
-  font-size: 18px;
+/* ================= GLOBAL ================= */
+body{
+    margin:0;
+    padding-top:100px;
+    background:#FFD7E5;
+    font-family:'MotleyForces', cursive;
+    color:#4a0032;
 }
 
-/* ------------------ HEADER IMAGE ------------------ */
-.header {
-    position: relative;
-    width: 100%;
-    height: 280px;
-    overflow: hidden;
-    border-bottom: 3px solid #ffb3d6;
+/* ================= NAV BAR ================= */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#ffe6f7;
+    padding:16px;
+    display:flex;
+    align-items:center;
+    border-bottom:3px solid #ffb3d6;
+    box-shadow:0 4px 10px rgba(255,150,200,0.35);
+    z-index:999;
 }
 
-.header img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+nav a{
+    text-decoration:none;
+    margin-right:18px;
+    font-size:22px;
+    color:#b3006b;
+    transition:0.3s;
 }
 
-.header-title {
+nav a:hover{
+    color:#ff0088;
+    transform:scale(1.1);
+}
+
+nav img{
+    border-radius:8px;
+}
+
+#clock{
+    background:#ffd1e8;
+    padding:4px 12px;
+    border-radius:8px;
+    font-size:18px;
+}
+
+/* ================= HEADER ================= */
+.header{
+    position:relative;
+    height:280px;
+    overflow:hidden;
+    border-bottom:3px solid #ffb3d6;
+}
+
+.header img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.header-title{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%, -50%);
+    transform:translate(-50%,-50%);
     font-size:80px;
     color:white;
-    text-shadow:4px 4px 12px #FF69B4;
+    text-shadow:4px 4px 12px hotpink;
 }
 
 /* floating emojis */
-.cake {
+.cake{
     position:absolute;
     font-size:32px;
-    opacity:0.8;
-    animation: fly 7s infinite ease-in-out;
+    animation:float 6s infinite ease-in-out;
 }
 .c1{left:15%;top:60px;}
-c2{left:35%;top:60px;}
-c3{left:55%;top:60px;}
-c4{left:75%;top:60px;}
+.c2{left:35%;top:60px;}
+.c3{left:55%;top:60px;}
+.c4{left:75%;top:60px;}
 
-@keyframes fly {
-    0%{transform:translateY(0) rotate(0deg);opacity:0.3;}
-    50%{transform:translateY(-40px) rotate(15deg);opacity:1;}
-    100%{transform:translateY(0) rotate(-8deg);opacity:0.4;}
+@keyframes float{
+    0%{transform:translateY(0);opacity:.4;}
+    50%{transform:translateY(-30px);opacity:1;}
+    100%{transform:translateY(0);opacity:.4;}
 }
 
-/* ------------------ MAIN CONTENT ------------------ */
-.container {
+/* ================= CONTENT ================= */
+.container{
     max-width:900px;
     margin:40px auto;
+    background:rgba(255,255,255,0.85);
     padding:35px;
-    background:rgba(255,255,255,0.8);
-    border-radius:24px;
-    box-shadow:0 0 15px rgba(255,150,200,0.3);
+    border-radius:25px;
     text-align:center;
+    box-shadow:0 0 15px rgba(255,150,200,0.3);
 }
 
-h2 {
+h2{
     color:#b3007c;
     text-shadow:1px 1px 3px #ff99cc;
 }
 
-/* ------------------ FOOD GALLERY ------------------ */
-.food-gallery {
+/* ================= IMAGE MAP ================= */
+.map-image{
+    margin:30px 0;
+    display:flex;
+    justify-content:center;
+}
+
+.map-image img{
+    width:50%;
+    max-width:220px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(255,150,200,0.35);
+}
+
+/* ================= FOOD GALLERY ================= */
+.food-gallery{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     gap:25px;
-    margin-top:25px;
+    margin-top:30px;
 }
 
-.food-item {
-    position:relative;
+.food-item{
     width:220px;
     height:220px;
+    position:relative;
 }
 
-.food-item img {
+.food-item img{
     width:100%;
     height:100%;
     object-fit:cover;
     border-radius:20px;
-    box-shadow:0 5px 15px rgba(255,150,200,0.35);
     transition:0.3s;
+    box-shadow:0 5px 15px rgba(255,150,200,0.35);
 }
 
-.food-item:hover img {
+.food-item:hover img{
     transform:scale(1.05);
 }
 
-.food-name {
+.food-name{
     position:absolute;
     bottom:12px;
     left:50%;
     transform:translateX(-50%);
-    padding:6px 12px;
     background:rgba(255,182,193,0.9);
-    color:#4a0032;
+    padding:6px 14px;
     border-radius:12px;
     font-size:18px;
 }
 
-/* ------------------ MAP ------------------ */
-.map-container {
+/* ================= GOOGLE MAP ================= */
+.map-container{
     margin-top:50px;
-    text-align:center;
 }
 
-.map-container h2 {
-    margin-bottom:20px;
-}
-
-.map-container iframe {
+.map-container iframe{
     width:80%;
     height:400px;
     border:4px solid #ffb3d6;
@@ -131,18 +183,15 @@ h2 {
     box-shadow:0 5px 15px rgba(255,150,200,0.35);
 }
 
-/* ------------------ FOOTER ------------------ */
-footer {
-    margin-top: 40px;
-    background: #ffe1f2;
-    border-top: 4px solid #ff9acb;
-    padding: 25px 0;
-    font-size: 20px;
-    color: #4a0032;
-    text-align: center;
-    width: 100%;
-    border-radius: 18px 18px 0 0;
-    box-shadow: 0 -4px 12px rgba(255,150,200,0.35);
+/* ================= FOOTER ================= */
+footer{
+    margin-top:40px;
+    background:#ffe1f2;
+    border-top:4px solid #ff9acb;
+    padding:25px;
+    text-align:center;
+    font-size:20px;
+    box-shadow:0 -4px 12px rgba(255,150,200,0.35);
 }
 
 </style>
@@ -161,86 +210,94 @@ footer {
   <a href="food.html">Food</a>
   <a href="gallery.html">Gallery</a>
 
-  <span style="margin-left:auto; display:flex; align-items:center; gap:14px;">
-      <a href="https://x.com/ermihzmy" target="_blank"><img src="icon.jpg" width="32"></a>
-      <a href="https://www.instagram.com/ermi.hzmy" target="_blank"><img src="icon.jpg" width="32"></a>
-      <span id="clock">00:00:00</span>
+  <span style="margin-left:auto; display:flex; gap:14px; align-items:center;">
+    <a href="https://x.com/ermihzmy" target="_blank"><img src="icon.jpg" width="32"></a>
+    <a href="https://www.instagram.com/ermi.hzmy" target="_blank"><img src="icon.jpg" width="32"></a>
+    <span id="clock">00:00:00</span>
   </span>
 </nav>
 
 <!-- HEADER -->
 <div class="header">
-    <img src="foodie.jpg">
-    <div class="header-title">CAFE</div>
-
-    <div class="cake c1">🍰</div>
-    <div class="cake c2">🥐</div>
-    <div class="cake c3">🥞</div>
-    <div class="cake c4">🍩</div>
+  <img src="foodie.jpg" alt="Cafe">
+  <div class="header-title">CAFE</div>
+  <div class="cake c1">🍰</div>
+  <div class="cake c2">🥐</div>
+  <div class="cake c3">🥞</div>
+  <div class="cake c4">🍩</div>
 </div>
 
 <!-- MAIN CONTENT -->
 <div class="container">
-    <h2>☕ One Serambi Café — My Favourite Menu!</h2>
 
-    <div class="food-gallery">
+<h2>☕ One Serambi Café</h2>
 
-        <div class="food-item">
-            <img src="cake 1.png">
-            <div class="food-name">Nutella Cheesecake</div>
-        </div>
+<!-- IMAGE MAP -->
+<div class="map-image">
+  <img src="oneserambi-map.png" usemap="#serambi" alt="One Serambi Cafe">
+  <map name="serambi">
+    <area shape="rect"
+          coords="0,0,600,400"
+          href="https://oneserambi.com/"
+          target="_blank"
+          alt="One Serambi Cafe Website">
+  </map>
+</div>
 
-        <div class="food-item">
-            <img src="cake 2.png">
-            <div class="food-name">Burnt Basque Cheesecake</div>
-        </div>
+<h2>🍰 My Favourite Menu</h2>
 
-        <div class="food-item">
-            <img src="latte.jpg">
-            <div class="food-name">Caramel Latte</div>
-        </div>
+<div class="food-gallery">
 
-        <div class="food-item">
-            <img src="matcha.jpg">
-            <div class="food-name">Matcha Latte</div>
-        </div>
+  <div class="food-item">
+    <img src="cake 1.png">
+    <div class="food-name">Nutella Cheesecake</div>
+  </div>
 
-        <div class="food-item">
-            <img src="dessert 1.png">
-            <div class="food-name">Cream Brulee</div>
-        </div>
+  <div class="food-item">
+    <img src="cake 2.png">
+    <div class="food-name">Burnt Basque Cheesecake</div>
+  </div>
 
-        <div class="food-item">
-            <img src="dessert 2.png">
-            <div class="food-name">Tira-Miss U</div>
-        </div>
+  <div class="food-item">
+    <img src="latte.jpg">
+    <div class="food-name">Caramel Latte</div>
+  </div>
 
-    </div>
+  <div class="food-item">
+    <img src="matcha.jpg">
+    <div class="food-name">Matcha Latte</div>
+  </div>
 
-    <div class="map-container">
-        <h2>📍 Location — One Serambi Café</h2>
+  <div class="food-item">
+    <img src="dessert 1.png">
+    <div class="food-name">Crème Brûlée</div>
+  </div>
 
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.710761429105!2d101.5260738!3d3.1033785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4dfa18e495e9%3A0x4fe619100b6bd7dd!2sOne%20Serambi%20Cafe!5e0!3m2!1sen!2smy!4v1702276100000!5m2!1sen!2smy"
-            loading="lazy"
-            allowfullscreen>
-        </iframe>
-    </div>
+  <div class="food-item">
+    <img src="dessert 2.png">
+    <div class="food-name">Tira-Miss U</div>
+  </div>
+
+</div>
+
+<div class="map-container">
+<h2>📍 Location</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.710761429105!2d101.5260738!3d3.1033785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4dfa18e495e9%3A0x4fe619100b6bd7dd!2sOne%20Serambi%20Cafe!5e0!3m2!1sen!2smy!4v1702276100000" loading="lazy"></iframe>
+</div>
 
 </div>
 
 <footer>
-  Copyright © Ermi Safiyyah 2025
+Copyright © Ermi Safiyyah 2025
 </footer>
 
-<!-- CLOCK SCRIPT -->
 <script>
 function updateClock(){
-  const d = new Date();
-  const hh = String(d.getHours()).padStart(2,'0');
-  const mm = String(d.getMinutes()).padStart(2,'0');
-  const ss = String(d.getSeconds()).padStart(2,'0');
-  document.getElementById('clock').textContent = `${hh}:${mm}:${ss}`;
+  const d=new Date();
+  document.getElementById("clock").innerHTML =
+    String(d.getHours()).padStart(2,"0")+":"+
+    String(d.getMinutes()).padStart(2,"0")+":"+
+    String(d.getSeconds()).padStart(2,"0");
 }
 setInterval(updateClock,1000);
 updateClock();
@@ -248,4 +305,5 @@ updateClock();
 
 </body>
 </html>
+
 
