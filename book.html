@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book – Ermi Safiyyah</title>
+
+<style>
+
+/* -------------------- FONT -------------------- */
+@font-face {
+  font-family: 'MotleyForces';
+  src: url('MotleyForcesRegular-w1rZ3.ttf') format('truetype');
+}
+
+/* -------------------- GLOBAL STYLE -------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'MotleyForces', cursive;
+  background: #FFD7E5;
+  color: #4a0032;
+}
+
+/* -------------------- NAVIGATION -------------------- */
+nav {
+  width: 100%;
+  background: #FFE6F7;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid #FFB3D6;
+  box-shadow: 0 3px 10px rgba(255,150,200,0.35);
+}
+
+nav a {
+  color: #b3006b;
+  margin-right: 18px;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 5px 8px;
+  transition: 0.25s;
+}
+
+nav a:hover {
+  color: #ff0088;
+  transform: scale(1.1);
+}
+
+/* ACTIVE LINK WITHOUT BACKGROUND */
+nav a.active {
+  color: #ff0088;
+  font-weight: bold;
+}
+
+nav .right-icons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+nav .right-icons img {
+  width: 32px;
+  height:32px;
+  border-radius: 10px;
+  transition: .25s;
+}
+
+nav .right-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* CLOCK */
+#clock {
+  background: #ffd1e8;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+/* -------------------- HEADER -------------------- */
+.header {
+  width: 100%;
+  height: 200px;
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #ffb3d6;
+}
+
+.header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 60px;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 4px 4px 12px hotpink;
+}
+
+/* FLOAT ICONS */
+.float {
+  position: absolute;
+  bottom: -20px;
+  font-size: 30px;
+  opacity: 0.85;
+  animation: fly 7s infinite ease-in-out;
+}
+
+.f1 { left: 10%; animation-delay: 0s; }
+.f2 { left: 30%; animation-delay: .7s; }
+.f3 { left: 50%; animation-delay: 1.5s; }
+.f4 { left: 70%; animation-delay: 2.3s; }
+.f5 { left: 85%; animation-delay: 1s; }
+
+@keyframes fly {
+  0%   { transform: translateY(0); opacity: .3; }
+  50%  { transform: translateY(-120px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(0); opacity: .3; }
+}
+
+/* -------------------- BOOK SECTION -------------------- */
+.book-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 35px;
+  background: rgba(255,255,255,0.75);
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(255,150,200,0.4);
+  text-align: center;
+}
+
+h2 {
+  color: #B3007C;
+  text-shadow: 1px 1px 3px #ff99cc;
+}
+
+/* CURRENT READ BOX */
+.current-read {
+  background: #FFE6F7;
+  border: 2px solid #FFB3D6;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(255,150,200,.25);
+}
+
+.current-read h3 {
+  margin: 0 0 8px 0;
+  color: #B3007C;
+  font-size: 28px;
+}
+
+/* -------------------- BOOK GRID -------------------- */
+.library {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* -------------------- BOOK CARD -------------------- */
+.book-card {
+  width: 220px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.book-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 20px;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 5px 15px rgba(255,150,200,0.3);
+}
+
+.book-card:hover .book-inner {
+  transform: rotateY(180deg);
+}
+
+.book-front,
+.book-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* FRONT */
+.book-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BACK */
+.book-back {
+  background: #FFE6F7;
+  padding: 15px;
+  color: #b3006b;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* STAR RATING */
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.stars span {
+  font-size: 22px;
+  color: #ff9acd;
+  transition: .2s;
+}
+
+.stars span.active {
+  color: #ff0077;
+  transform: scale(1.2);
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    margin-top: 40px;
+    background: #ffe1f2;
+    border-top: 4px solid #ff9acb;
+    padding: 25px 0;
+    font-size: 20px;
+    color: #4a0032;
+    text-align: center;
+    width: 100%;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 12px rgba(255,150,200,0.35);
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- -------------------- NAV -------------------- -->
+<nav>
+  <a href="assingment.html">Home</a>
+  <a href="edu.html">Education</a>
+  <a href="biodata.html">Biodata</a>
+  <a href="family.html">Family</a>
+  <a href="music.html">Music</a>
+  <a href="book.html" class="active">Book</a>
+  <a href="food.html">Food</a>
+  <a href="gallery.html">Gallery</a>
+
+  <div class="right-icons">
+    <a href="https://x.com/ermihzmy"><img src="icon.jpg"></a>
+    <a href="https://www.instagram.com/ermi.hzmy"><img src="icon.jpg"></a>
+    <span id="clock">00:00:00</span>
+  </div>
+</nav>
+
+<!-- -------------------- HEADER -------------------- -->
+<div class="header">
+  <img src="books.jpg">
+  <div class="header-title">BOOKS</div>
+
+  <div class="float f1">📚</div>
+  <div class="float f2">✨</div>
+  <div class="float f3">🌙</div>
+  <div class="float f4">💖</div>
+  <div class="float f5">📖</div>
+</div>
+
+<!-- -------------------- BOOK SECTION -------------------- -->
+<div class="book-section">
+
+  <h2>📚 My Little Library</h2>
+
+  <div class="current-read">
+    <h3>📖 Currently Reading</h3>
+    <p style="font-size:20px; margin:0;">
+      <a href="https://www.amazon.com/dp/B0C6XYZ123" target="_blank" style="color:#4a0032;text-decoration:none;">
+        The Long Game
+      </a>
+    </p>
+    <p>By Elena Armas · Romance</p>
+  </div>
+
+  <div class="library">
+
+    <!-- Book 1 -->
+    <div class="book-card"><div class="book-inner">
+      <div class="book-front"><img src="book1.jpg"></div>
+      <div class="book-back">
+        <div>An Offer From a Gentleman</div>
+        <div>Julia Quinn</div>
+        <div>Historical Romance</div>
+        <div class="stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span></div>
+      </div>
+    </div></div>
+
+    <!-- Book 2 -->
+    <div class="book-card"><div class="book-inner">
+      <div class="book-front"><img src="book2.jpg"></div>
+      <div class="book-back">
+        <div>Shadow and Bone</div>
+        <div>Leigh Bardugo</div>
+        <div>Fantasy</div>
+        <div class="stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>☆</span></div>
+      </div>
+    </div></div>
+
+    <!-- Book 3 -->
+    <div class="book-card"><div class="book-inner">
+      <div class="book-front"><img src="book3.jpg"></div>
+      <div class="book-back">
+        <div>The Spanish Love Deception</div>
+        <div>Elena Armas</div>
+        <div>Romance</div>
+        <div class="stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>☆</span></div>
+      </div>
+    </div></div>
+
+    <!-- Book 4 -->
+    <div class="book-card"><div class="book-inner">
+      <div class="book-front"><img src="book4.jpg"></div>
+      <div class="book-back">
+        <div>Homeland Elegies</div>
+        <div>Ayad Akhtar</div>
+        <div>Contemporary Fiction</div>
+        <div class="stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>☆</span></div>
+      </div>
+    </div></div>
+
+    <!-- Book 5 -->
+    <div class="book-card"><div class="book-inner">
+      <div class="book-front"><img src="book5.jpg"></div>
+      <div class="book-back">
+        <div>Fire & Blood</div>
+        <div>George R.R. Martin</div>
+        <div>Fantasy / Historical</div>
+        <div class="stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span></div>
+      </div>
+    </div></div>
+
+    <!-- Book 6 -->
+    <div class="book-card"><div class="book-inner">
+      <div class="book-front"><img src="book6.jpg"></div>
+      <div class="book-back">
+        <div>The Queen Who Came In From the Cold</div>
+        <div>S.J. Bennett</div>
+        <div>Cozy Mystery</div>
+        <div class="stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span></div>
+      </div>
+    </div></div>
+
+    <!-- Book 7 -->
+    <div class="book-card"><div class="book-inner">
+      <div class="book-front"><img src="book7.jpg"></div>
+      <div class="book-back">
+        <div>The Summer I Turned Pretty</div>
+        <div>Jenny Han</div>
+        <div>Romance</div>
+        <div class="stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>☆</span></div>
+      </div>
+    </div></div>
+
+    <!-- Book 8 -->
+    <div class="book-card"><div class="book-inner">
+      <div class="book-front"><img src="book8.jpg"></div>
+      <div class="book-back">
+        <div>The Housemaid</div>
+        <div>Freida McFadden</div>
+        <div>Thriller</div>
+        <div class="stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>☆</span></div>
+      </div>
+    </div></div>
+
+  </div>
+
+</div>
+
+<!-- -------------------- FOOTER -------------------- -->
+<footer>
+  Copyright © Ermi Safiyyah 2025
+</footer>
+<!-- -------------------- SCRIPT -------------------- -->
+<script>
+function updateClock() {
+  const d = new Date();
+  const hh = String(d.getHours()).padStart(2,'0');
+  const mm = String(d.getMinutes()).padStart(2,'0');
+  const ss = String(d.getSeconds()).padStart(2,'0');
+  document.getElementById("clock").textContent = `${hh}:${mm}:${ss}`;
+}
+setInterval(updateClock,1000);
+updateClock();
+
+/* STAR RATING */
+document.querySelectorAll(".stars").forEach(group => {
+  const stars = group.querySelectorAll("span");
+  stars.forEach((star, i) => {
+    star.addEventListener("click", () => {
+      stars.forEach(s => s.classList.remove("active"));
+      for (let x = 0; x <= i; x++) stars[x].classList.add("active");
+    });
+  });
+});
+</script>
+
+</body>
+</html>

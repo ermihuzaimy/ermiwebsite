@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Music - Ermi Safiyyah</title>
+
+<style>
+/* -------------------- FONT -------------------- */
+@font-face {
+    font-family: 'MotleyForces';
+    src: url('MotleyForcesRegular-w1rZ3.ttf') format('truetype');
+}
+
+/* -------------------- GLOBAL -------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'MotleyForces', cursive;
+    background: #FFD7E5;
+    color: #4a0032;
+    overflow-x: hidden;
+}
+
+/* -------------------- NAVBAR -------------------- */
+nav {
+    background: #ffe6f7;
+    padding: 16px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #ffb3d6;
+    box-shadow: 0 4px 10px rgba(255,150,200,0.35);
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 18px;
+    font-size: 22px;
+    color: #b3006b;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff0088;
+    transform: scale(1.1);
+}
+
+/* RIGHT SIDE ICONS */
+nav .right-icons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav #clock {
+    background: #ffd1e8;
+    padding: 4px 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    color: #3b0030;
+}
+
+nav .right-icons a img {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+nav .right-icons a img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* -------------------- HEADER -------------------- */
+.header {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-bottom: 3px solid #FFB6C1;
+    margin-top: 75px;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color: white;
+    text-shadow: 4px 4px 10px #FF69B4;
+}
+
+/* -------------------- FLOATING DECOR -------------------- */
+.floating {
+    position: absolute;
+    bottom: -30px;
+    font-size: 28px;
+    animation: floatUp 7s infinite ease-in-out;
+    opacity: 0.7;
+}
+.f1 { left: 10%; animation-delay: 0s; }
+.f2 { left: 25%; animation-delay: 1s; }
+.f3 { left: 40%; animation-delay: 2s; }
+.f4 { left: 55%; animation-delay: 1.5s; }
+.f5 { left: 70%; animation-delay: 2.5s; }
+.f6 { left: 85%; animation-delay: 0.5s; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-200px) scale(1.3); opacity: 1; }
+    100% { transform: translateY(-350px) scale(0.8); opacity: 0; }
+}
+
+/* -------------------- MAIN CONTENT -------------------- */
+.music-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 35px;
+    background: rgba(255,255,255,0.75);
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(255,170,205,0.4);
+    text-align: center;
+}
+
+/* HEADINGS */
+h2 {
+    color: #B3007C;
+    text-shadow: 1px 1px 3px #ff99cc;
+    margin-top: 35px;
+}
+
+/* ARTIST CARDS */
+.artist-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.artist {
+    width: 180px;
+    background: #fff0f5;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(255,150,200,0.3);
+}
+.artist:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(255,150,200,0.6);
+}
+.artist img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.artist p {
+    font-weight: bold;
+    color: #B3007C;
+    margin-top: 8px;
+}
+
+/* MUSIC BOX */
+.music-box {
+    margin-top: 30px;
+    padding: 22px;
+    background: rgba(255,240,250,0.9);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255,140,200,0.4);
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.music-box h3 {
+    color: #B3007C;
+    margin-bottom: 15px;
+}
+
+audio, video {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ORDERED LIST STYLING */
+ol {
+    margin: 20px auto;
+    padding-left: 25px;
+    max-width: 500px;
+    color: #B3007C;
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    background: #ffe1f2;
+    border-top: 4px solid #ff9acb;
+    padding: 25px 0;
+    font-size: 20px;
+    color: #4a0032;
+    text-align: center;
+    width: 100%;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 12px rgba(255,150,200,0.35);
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+
+<!-- NAVBAR -->
+<nav>
+  <a href="assingment.html">Home</a>
+  <a href="edu.html">Education</a>
+  <a href="biodata.html">Biodata</a>
+  <a href="family.html">Family</a>
+  <a href="music.html">Music</a>
+  <a href="book.html">Book</a>
+  <a href="food.html">Food</a>
+  <a href="gallery.html">Gallery</a>
+
+
+  <span class="right-icons">
+    <a href="https://x.com/ermihzmy" target="_blank"><img src="icon.jpg" alt="X"></a>
+    <a href="https://www.instagram.com/ermi.hzmy" target="_blank"><img src="icon.jpg" alt="IG"></a>
+    <span id="clock">00:00:00</span>
+  </span>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="played.jpg" class="bg-img" alt="Music Header">
+    <div class="header-title">MUSIC</div>
+
+    <div class="floating f1">✨</div>
+    <div class="floating f2">🎵</div>
+    <div class="floating f3">🌟</div>
+    <div class="floating f4">🎶</div>
+    <div class="floating f5">✨</div>
+    <div class="floating f6">🎵</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="music-section">
+
+    <h2>🎤 Favourite Artists</h2>
+    <p>ENHYPEN • Shawn Mendes • Olivia Rodrigo</p>
+
+    <div class="artist-container">
+        <div class="artist"><img src="enhypen.jpg" alt="ENHYPEN"><p>ENHYPEN</p></div>
+        <div class="artist"><img src="shawn.jpg" alt="Shawn Mendes"><p>Shawn Mendes</p></div>
+        <div class="artist"><img src="olivia.jpg" alt="Olivia Rodrigo"><p>Olivia Rodrigo</p></div>
+    </div>
+
+    <h2>💗 Favourite Genres</h2>
+    <p>Ballad • K-Pop • Pop</p>
+
+    <div class="music-box">
+        <h3>🎧 Current Jam</h3>
+        <audio controls>
+            <source src="enhypenn.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="music-box">
+        <h3>🎥 Music Video</h3>
+        <video controls>
+            <source src="ermii.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <h2 style="text-align:center;">💖 Top Songs</h2>
+
+<ol style="text-align:center; list-style-position: inside;">
+    <li>ENHYPEN – Highway 1009</li>
+    <li>Shawn Mendes – Fallin’ All In You</li>
+    <li>Olivia Rodrigo – So American</li>
+    <li>ENHYPEN – Drunk-Dazed</li>
+    <li>Olivia Rodrigo – vampire</li>
+</ol>
+
+    <div class="music-box">
+        <h3>ENHYPEN – Highway 1009</h3>
+        <audio controls><source src="highway1009.mp3" type="audio/mpeg"></audio>
+    </div>
+    <div class="music-box">
+        <h3>Shawn Mendes – Fallin’ All In You</h3>
+        <audio controls><source src="fallinallinyou.mp3" type="audio/mpeg"></audio>
+    </div>
+    <div class="music-box">
+        <h3>Olivia Rodrigo – So American</h3>
+        <audio controls><source src="soamerican.mp3" type="audio/mpeg"></audio>
+    </div>
+
+</div>
+
+<footer>
+  Copyright © Ermi Safiyyah 2025
+</footer>
+
+<!-- CLOCK SCRIPT -->
+<script>
+function updateClock() {
+    const d = new Date();
+    const hh = String(d.getHours()).padStart(2,'0');
+    const mm = String(d.getMinutes()).padStart(2,'0');
+    const ss = String(d.getSeconds()).padStart(2,'0');
+    document.getElementById('clock').textContent = `${hh}:${mm}:${ss}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

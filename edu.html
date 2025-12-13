@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Education - Ermi Safiyyah</title>
+
+<style>
+/* FONT */
+@font-face {
+    font-family: 'MotleyForces';
+    src: url('MotleyForcesRegular-w1rZ3.ttf') format('truetype');
+}
+
+/* BODY */
+body {
+    background:#FFD7E5;
+    color:#4a0032;
+    font-family: 'MotleyForces', cursive;
+    margin:0;
+    padding:0;
+}
+
+/* NAVIGATION BAR */
+nav {
+    background:#ffe6f7;
+    padding:16px;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    border-bottom:3px solid #ffb3d6;
+    box-shadow:0 4px 10px rgba(255,150,200,0.35);
+}
+
+nav a {
+    text-decoration:none;
+    margin-right:18px;
+    font-size:22px;
+    color:#b3006b;
+    padding:6px 10px;
+    transition:0.3s;
+}
+
+nav a:hover {
+    color:#ff0088;
+    transform:scale(1.1);
+}
+
+nav img {
+    border-radius:10px;
+}
+
+#clock {
+    background:#ffd1e8;
+    padding:4px 10px;
+    font-size:18px;
+    border-radius:8px;
+    margin-left:10px;
+}
+
+/* HEADER */
+.header {
+    position:relative;
+    width:100%;
+    height:260px;
+    overflow:hidden;
+    margin-top:75px;
+    border-bottom:3px solid #FFB6C1;
+}
+
+.header .bg-img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.header-title {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size:70px;
+    color:white;
+    text-shadow:4px 4px 10px #FF69B4;
+}
+
+/* FLOATING BOOKS */
+.book-icon {
+    position:absolute;
+    font-size:30px;
+    opacity:0.8;
+    animation:floatUp 7s infinite ease-in-out;
+}
+
+.b1 { left:12%; bottom:-20px; animation-delay:0s; }
+.b2 { left:32%; bottom:-20px; animation-delay:1s; }
+.b3 { left:55%; bottom:-20px; animation-delay:2s; }
+.b4 { left:78%; bottom:-20px; animation-delay:3s; }
+
+@keyframes floatUp {
+    0% { transform:translateY(0); opacity:0.4; }
+    50% { transform:translateY(-120px); opacity:1; }
+    100% { transform:translateY(0); opacity:0.4; }
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width:900px;
+    margin:30px auto;
+    background:rgba(255,255,255,0.7);
+    padding:25px 35px;
+    border-radius:14px;
+    box-shadow:0 0 15px rgba(255,170,205,0.4);
+}
+
+/* HEADINGS */
+h2, h3 {
+    text-align:center;
+    font-size:48px;
+    color:#B3007C;
+    text-shadow:1px 1px 3px #ff99cc;
+    margin-bottom:15px;
+}
+
+/* BOX SECTIONS */
+.box {
+    background:rgba(255,230,247,0.9);
+    padding:15px 20px;
+    border-radius:12px;
+    margin-bottom:20px;
+    max-width:450px;
+    margin-left:auto;
+    margin-right:auto;
+    box-shadow:0 0 12px rgba(255,150,200,0.3);
+}
+
+.box ul {
+    list-style:none;
+    padding-left:0;
+}
+
+.box ul li::before {
+    content: "📚 ";
+}
+
+/* TABLES */
+table {
+    border-collapse:collapse;
+    width:80%;
+    margin:0 auto 35px;
+    background:#ffe6f0;
+    border-radius:12px;
+}
+
+th, td {
+    border:1px solid #ff69b4;
+    padding:12px;
+    text-align:center;
+    font-size:17px;
+}
+
+th {
+    background:#ffb6c1;
+    font-size:20px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    background: #ffe1f2;
+    border-top: 4px solid #ff9acb;
+    padding: 25px 0;
+    font-size: 20px;
+    color: #4a0032;
+    text-align: center;
+    width: 100%;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 12px rgba(255,150,200,0.35);
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="assingment.html">Home</a>
+  <a href="edu.html">Education</a>
+  <a href="biodata.html">Biodata</a>
+  <a href="family.html">Family</a>
+  <a href="music.html">Music</a>
+  <a href="book.html">Book</a>
+  <a href="food.html">Food</a>
+  <a href="gallery.html">Gallery</a>
+
+  <span style="margin-left:auto; display:flex; align-items:center;">
+    <a href="https://x.com/ermihzmy" target="_blank"><img src="icon.jpg" width="32" height="32"></a>
+    <a href="https://www.instagram.com/ermi.hzmy?igsh=MTdsajN0cmEycGNxYg==" target="_blank">
+      <img src="icon.jpg" width="32" height="32" style="margin-left:10px;">
+    </a>
+    <span id="clock">00:00:00</span>
+  </span>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="book.jpg" class="bg-img">
+    <div class="header-title">EDUCATION</div>
+
+    <!-- Floating books -->
+    <div class="book-icon b1">📚</div>
+    <div class="book-icon b2">📖</div>
+    <div class="book-icon b3">📘</div>
+    <div class="book-icon b4">📕</div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+<h2>My Education Background & Favourite Subjects</h2>
+
+<!-- FAVOURITE SUBJECTS BOX -->
+<div class="box">
+  <p style="text-align:center; font-size:20px; font-weight:bold;">My Favourite Subjects:</p>
+  <ul>
+    <li>Science</li>
+    <li>English</li>
+    <li>Economy</li>
+  </ul>
+</div>
+
+<!-- EDUCATION BACKGROUND BOX -->
+<div class="box">
+  <p style="text-align:center; font-size:20px; font-weight:bold;">My Education Background:</p>
+  <ul>
+    <li>Qudes Puncak Perdana</li>
+    <li>SK Bukit Jelutong</li>
+    <li>SMK Bukit Jelutong</li>
+    <li>UiTM Segamat</li>
+  </ul>
+</div>
+
+<h3>Weekly Routine (Mon–Thu)</h3>
+<table>
+  <tr>
+    <th>Time</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th>
+  </tr>
+  <tr><td>06:00</td><td>Subuh</td><td>Subuh</td><td>Subuh</td><td>Subuh</td></tr>
+  <tr><td>07:00</td><td>Shower</td><td>Shower</td><td>Shower</td><td>Shower</td></tr>
+  <tr><td>08:00 - 14:00</td><td>Class / Rest</td><td>Class / Rest</td><td>Class / Rest</td><td>Class / Rest</td></tr>
+  <tr><td>14:00</td><td>Zohor</td><td>Zohor</td><td>Zohor</td><td>Zohor</td></tr>
+  <tr><td>15:00 - 17:00</td><td>Class</td><td>Class</td><td>Class</td><td>Class</td></tr>
+  <tr><td>17:00</td><td>Asar</td><td>Asar</td><td>Asar</td><td>Asar</td></tr>
+  <tr><td>18:00 - 19:00</td><td>Shower + Dinner</td><td>Shower + Dinner</td><td>Shower + Dinner</td><td>Shower + Dinner</td></tr>
+  <tr><td>19:00</td><td>Maghrib</td><td>Maghrib</td><td>Maghrib</td><td>Maghrib</td></tr>
+  <tr><td>20:00</td><td>Isyak</td><td>Isyak</td><td>Isyak</td><td>Isyak</td></tr>
+  <tr><td>22:00</td><td>Sleep</td><td>Sleep</td><td>Sleep</td><td>Sleep</td></tr>
+</table>
+
+<h3>Full Class Schedule</h3>
+<table>
+  <tr><th>TIME</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>NOTE</th></tr>
+  <tr><td>08:00</td><td></td><td></td><td></td><td></td><td></td><td>BK 17, C209</td></tr>
+  <tr><td>09:00</td><td>IMD 313</td><td></td><td></td><td></td><td></td><td>TETA</td></tr>
+  <tr><td>10:00</td><td>IMD 313</td><td></td><td></td><td></td><td></td><td>ZETA LAB</td></tr>
+  <tr><td>11:00</td><td></td><td>IMD 316</td><td>IMD 318</td><td></td><td></td><td>SL 030</td></tr>
+  <tr><td>12:00</td><td></td><td>IMD 316</td><td>IMD 318</td><td>IMD 313</td><td>IMD 310</td><td>PC MAINTENANCE</td></tr>
+  <tr><td>13:00</td><td></td><td>IMD 316</td><td>IMD 318</td><td>IMD 313</td><td>IMD 310</td><td>Drink Water!</td></tr>
+  <tr><td>14:00</td><td>IMD 317</td><td>IMD 316</td><td>IMD 318</td><td>IMD 313</td><td></td><td>Last Sem!</td></tr>
+  <tr><td>15:00</td><td>IMD 317</td><td>IMD 317</td><td></td><td></td><td></td><td>You</td></tr>
+  <tr><td>16:00</td><td>IMD 317</td><td>IMD 317</td><td></td><td></td><td></td><td>Can</td></tr>
+  <tr><td>17:00</td><td>IMD 317</td><td></td><td></td><td></td><td></td><td>Do It!</td></tr>
+</table>
+
+</div> <!-- Close container -->
+
+<footer>
+  Copyright © Ermi Safiyyah 2025
+</footer>
+
+<script>
+// Clock
+function updateClock(){
+  const d = new Date();
+  const hh = String(d.getHours()).padStart(2,'0');
+  const mm = String(d.getMinutes()).padStart(2,'0');
+  const ss = String(d.getSeconds()).padStart(2,'0');
+  document.getElementById('clock').textContent = `${hh}:${mm}:${ss}`;
+}
+setInterval(updateClock,1000);
+updateClock();
+
+// Popup
+if(!localStorage.getItem('eduPopup')){
+  alert("Welcome to my Education Page! 📚💗");
+  localStorage.setItem('eduPopup','1');
+}
+</script>
+
+</body>
+</html>

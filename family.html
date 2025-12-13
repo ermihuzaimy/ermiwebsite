@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Family - Ermi Safiyyah</title>
+
+<style>
+/* -------------------- FONT -------------------- */
+@font-face {
+    font-family: 'MotleyForces';
+    src: url('MotleyForcesRegular-w1rZ3.ttf') format('truetype');
+}
+
+/* -------------------- GLOBAL -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MotleyForces', cursive;
+}
+
+body {
+    background: #FFD7E5;
+    color: #3b0030;
+}
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+    background: #ffe6f7;
+    padding: 16px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #ffb3d6;
+    box-shadow: 0 4px 10px rgba(255,150,200,0.35);
+    z-index: 999;
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 18px;
+    font-size: 22px;
+    color: #b3006b;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff0088;
+    transform: scale(1.1);
+}
+
+nav .right-icons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .right-icons a img {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+nav .right-icons a img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+#clock {
+    background: #ffd1e8;
+    padding: 4px 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    color: #3b0030;
+}
+
+/* ===== HEADER ===== */
+.header {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: 78px;
+    border-bottom: 3px solid #ffb6d5;
+    overflow: hidden;
+}
+
+.header .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    text-shadow: 4px 4px 12px hotpink;
+}
+
+/* Floating hearts */
+.float {
+    position: absolute;
+    bottom: -20px;
+    font-size: 30px;
+    opacity: 0.8;
+    animation: fly 8s infinite ease-in-out;
+}
+
+.f1 { left: 10%; animation-delay: 0s; }
+.f2 { left: 27%; animation-delay: 1.5s; }
+.f3 { left: 45%; animation-delay: 0.7s; }
+.f4 { left: 65%; animation-delay: 2.3s; }
+.f5 { left: 80%; animation-delay: 1.2s; }
+
+@keyframes fly {
+    0% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-120px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(0) scale(0.9); opacity: 0.4; }
+}
+
+/* ===== MAIN CONTENT ===== */
+.container {
+    max-width: 900px;
+    margin: 40px auto 60px;
+    padding: 20px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 38px;
+    color: #b3007c;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px #ff99cc;
+}
+
+/* Grid of cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.78);
+    padding: 18px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(255,150,200,0.25);
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(255,120,180,0.32);
+}
+
+.photo {
+    width: 150px;
+    height: 235px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 4px solid #ffd6ea;
+    box-shadow: 0 6px 18px rgba(255,120,170,0.2);
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    margin: 6px 0 4px;
+    color: #b3007c;
+    font-size: 20px;
+}
+
+.role {
+    font-size: 14px;
+    color: #7a2a4a;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #3b0030;
+}
+
+.icon-row {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    margin-top: 40px;
+    background: #ffe1f2;
+    border-top: 4px solid #ff9acb;
+    padding: 25px 0;
+    font-size: 20px;
+    color: #4a0032;
+    text-align: center;
+    width: 100%;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 12px rgba(255,150,200,0.35);
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION BAR -->
+<nav>
+  <a href="assingment.html">Home</a>
+  <a href="edu.html">Education</a>
+  <a href="biodata.html">Biodata</a>
+  <a href="family.html">Family</a>
+  <a href="music.html">Music</a>
+  <a href="book.html">Book</a>
+  <a href="food.html">Food</a>
+  <a href="gallery.html">Gallery</a>
+
+  <span class="right-icons">
+    <a href="https://x.com/ermihzmy" target="_blank"><img src="icon.jpg" alt="X"></a>
+    <a href="https://www.instagram.com/ermi.hzmy" target="_blank"><img src="icon.jpg" alt="IG"></a>
+    <span id="clock">00:00:00</span>
+  </span>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="hearts.jpg" class="bg-img" alt="Header Image">
+  <div class="header-title">Family</div>
+
+  <div class="float f1">❤️</div>
+  <div class="float f2">💖</div>
+  <div class="float f3">🌟</div>
+  <div class="float f4">✨</div>
+  <div class="float f5">💕</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="page-title">My Family</div>
+
+  <div class="grid">
+    <!-- Father -->
+    <div class="card">
+      <img class="photo" src="papa.jpeg" alt="Father">
+      <h3>Huzaimy</h3>
+      <div class="role">Father</div>
+      <p>Loves sports, coffee, and 90s bands like Green Day.</p>
+<div class="icon-row">🏎️ 🏀 ☕ 🎸</div>
+    </div>
+
+    <!-- Mother -->
+    <div class="card">
+      <img class="photo" src="mama.jpeg" alt="Mother">
+      <h3>Ria</h3>
+      <div class="role">Mother</div>
+      <p>Loves teas, cooking, and perfumes.</p>
+      <div class="icon-row">🍵 👩‍🍳 🌸</div>
+    </div>
+
+    <!-- Younger Brother -->
+    <div class="card">
+      <img class="photo" src="hadiff.jpeg" alt="Brother">
+      <h3>Hadiff</h3>
+      <div class="role">Younger Brother</div>
+      <p>Loves football, video games, and tasty snacks.</p>
+<div class="icon-row">⚽ 🎮 🍩</div>
+    </div>
+
+    <!-- Younger Sister -->
+    <div class="card">
+      <img class="photo" src="aisyah.jpeg" alt="Sister">
+      <h3>Aisyah</h3>
+      <div class="role">Younger Sister</div>
+      <p>Loves K-pop Demon Hunters, chocolate, bread, capybara, and Zus Choco.</p>
+      <div class="icon-row">🎶 🐹 🍫 🍞 🍫</div>
+    </div>
+
+    <!-- Me -->
+    <div class="card">
+      <img class="photo" src="safiyyah.jpeg" alt="Me">
+      <h3>Ermi</h3>
+      <div class="role">Me</div>
+      <p>Artistic, loves cute things, pastel pink aesthetic, reading books, singing, and chocolate.</p>
+      <div class="icon-row">📚 🎤 🍫 💖 🎀</div>
+    </div>
+
+    <!-- Pet Fish -->
+    <div class="card">
+      <img class="photo" src="nami.jpg" alt="Fish">
+      <h3>Nami</h3>
+      <div class="role">Pet Fish</div>
+      <p>Our calm, glowing little aquarium buddy who loves swimming, bubbles, and snacks.</p>
+      <div class="icon-row">🐟 💧 🐠 ✨</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Copyright © Ermi Safiyyah 2025
+</footer>
+
+<!-- CLOCK SCRIPT -->
+<script>
+function updateClock() {
+    const d = new Date();
+    const hh = ("0" + d.getHours()).slice(-2);
+    const mm = ("0" + d.getMinutes()).slice(-2);
+    const ss = ("0" + d.getSeconds()).slice(-2);
+    document.getElementById("clock").textContent = hh + ":" + mm + ":" + ss;
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

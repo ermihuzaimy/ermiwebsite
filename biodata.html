@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Biodata - Ermi Safiyyah</title>
+
+<style>
+/* -------------------- IMPORT FONT -------------------- */
+@font-face {
+    font-family: 'MotleyForces';
+    src: url('MotleyForcesRegular-w1rZ3.ttf') format('truetype');
+}
+
+/* -------------------- BODY -------------------- */
+body {
+    background: #FFD7E5;
+    color: #4a0032;
+    font-family: 'MotleyForces', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------- NAVIGATION -------------------- */
+nav {
+    background: #ffe6f7;
+    padding: 16px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #ffb3d6;
+    box-shadow: 0 4px 10px rgba(255,150,200,0.35);
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 18px;
+    font-size: 22px;
+    color: #b3006b;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff0088;
+    transform: scale(1.1);
+}
+
+nav img {
+    border-radius: 10px;
+}
+
+/* CLOCK */
+#clock {
+    background: #ffd1e8;
+    padding: 4px 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-left: 14px;
+}
+
+/* -------------------- HEADER -------------------- */
+.header {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    margin-top: 75px;
+    border-bottom: 3px solid #FFB6C1;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color: white;
+    text-shadow: 4px 4px 10px #FF69B4;
+    letter-spacing: 3px;
+}
+
+/* -------------------- HEART ANIMATION -------------------- */
+.heart {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.8;
+    animation: fly 8s infinite ease-in-out;
+}
+
+.h1 { left: 12%; bottom: -20px; animation-delay: 0s; }
+.h2 { left: 32%; bottom: -20px; animation-delay: 2s; }
+.h3 { left: 58%; bottom: -20px; animation-delay: 1s; }
+.h4 { left: 82%; bottom: -20px; animation-delay: 3s; }
+.h5 { left: 20%; bottom: -20px; animation-delay: 1.5s; }
+.h6 { left: 70%; bottom: -20px; animation-delay: 2.5s; }
+
+@keyframes fly {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+    50%  { transform: translateY(-120px) rotate(15deg); opacity: 1; }
+    100% { transform: translateY(0) rotate(-5deg); opacity: 0.4; }
+}
+
+/* -------------------- CONTAINER -------------------- */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.7);
+    padding: 25px 35px;
+    border-radius: 14px;
+    box-shadow: 0 0 15px rgba(255,170,205,0.4);
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+    color: #B3007C;
+    text-align: center;
+    text-shadow: 1px 1px 3px #ff99cc;
+}
+
+/* SECTION HEADERS */
+.section {
+    margin-bottom: 25px;
+}
+
+.section h3 {
+    text-align: left;
+    color: #B3007C;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffb3d6;
+    padding-bottom: 4px;
+}
+
+/* LISTS */
+ul {
+    list-style: disc inside;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* -------------------- FOOTER (new pink rounded footer) -------------------- */
+footer {
+    margin-top: 40px;
+    background: #ffe1f2;
+    border-top: 4px solid #ff9acb;
+    padding: 25px 0;
+    font-size: 20px;
+    color: #4a0032;
+    text-align: center;
+    width: 100%;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 12px rgba(255,150,200,0.35);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- -------------------- HEADER -------------------- -->
+<div class="header">
+    <img src="bio.jpg" class="bg-img">
+    <div class="header-title">Biodata</div>
+
+    <div class="heart h1">❤️</div>
+    <div class="heart h2">❤️</div>
+    <div class="heart h3">❤️</div>
+    <div class="heart h4">❤️</div>
+    <div class="heart h5">❤️</div>
+    <div class="heart h6">❤️</div>
+</div>
+
+<!-- -------------------- NAVIGATION -------------------- -->
+<nav>
+  <a href="assingment.html">Home</a>
+  <a href="edu.html">Education</a>
+  <a href="biodata.html">Biodata</a>
+  <a href="family.html">Family</a>
+  <a href="music.html">Music</a>
+  <a href="book.html">Book</a>
+  <a href="food.html">Food</a>
+  <a href="gallery.html">Gallery</a>
+
+  <span style="margin-left:auto; display:flex; align-items:center;">
+    <a href="https://x.com/ermihzmy" target="_blank">
+      <img src="icon.jpg" width="32" height="32">
+    </a>
+    <a href="https://www.instagram.com/ermi.hzmy?igsh=MTdsajN0cmEycGNxYg==" target="_blank">
+      <img src="icon.jpg" width="32" height="32" style="margin-left:10px;">
+    </a>
+    <span id="clock">00:00:00</span>
+  </span>
+</nav>
+
+<!-- -------------------- CONTENT -------------------- -->
+<div class="container">
+
+    <h1>Biodata</h1>
+
+    <!-- PHOTO -->
+    <div style="text-align:center;">
+        <img src="biodata.jpg" style="
+            width:200px;
+            height:290px;
+            object-fit:cover;
+            border:4px solid #ff8cbb;
+            box-shadow:0 0 12px rgba(255,120,170,0.45);
+        ">
+    </div>
+
+    <!-- PERSONAL INFO -->
+    <div class="section">
+        <h3>Personal Information</h3>
+        <ul>
+            <li><strong>Name:</strong> Siti Nurermi Safiyyah</li>
+            <li><strong>Age:</strong> 20 Years Old</li>
+            <li><strong>Address:</strong> Shah Alam, Selangor, Malaysia</li>
+            <li><strong>Email:</strong> ermihuzaimy@gmail.com</li>
+            <li><strong>Phone:</strong> +601121665784</li>
+        </ul>
+    </div>
+
+    <!-- MBTI -->
+    <div class="section">
+        <h3>Personality Type (MBTI)</h3>
+        <ul>
+            <li><strong>INFJ – The Advocate / The Idealist</strong><br>
+                Soft-hearted • intuitive • empathetic • aesthetic lover • deep thinker ♡
+            </li>
+            <li>
+                <a href="https://www.16personalities.com/infj-personality" target="_blank"
+                   style="color:#b3006b; text-decoration:underline;">
+                   Meaning of INFJ (Click to Learn More)
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <h3>Education</h3>
+        <ul>
+            <li><strong>UiTM Segamat</strong> — Diploma in Information Management (2023 – Present)</li>
+            <li><strong>SMK Bukit Jelutong</strong> — Secondary School (2018 – 2022)</li>
+            <li><strong>SK Bukit Jelutong</strong> — Primary School (2012 – 2017)</li>
+            <li><strong>Qudes Puncak Perdana</strong> — Early Education (2009 – 2011)</li>
+        </ul>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+        <h3>Work / Internship Experience</h3>
+        <ul>
+            <li><strong>Eskayvie Sdn Bhd</strong> — Internship
+                <ul>
+                    <li>Document sorting & colour coding</li>
+                    <li>Filing & organisation</li>
+                    <li>Admin assistance & project support</li>
+                </ul>
+            </li>
+            <li><strong>Baskbear Coffee, Denai Alam</strong> — Part-time Barista (2023)
+                <ul>
+                    <li>Beverage preparation</li>
+                    <li>Customer service</li>
+                    <li>Cashier & store organisation</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+        <h3>Skills</h3>
+        <ul>
+            <li>Web Design (pink, cute & aesthetic)</li>
+            <li>Document & Digital Management</li>
+            <li>Teamwork & Problem-solving</li>
+            <li>Communication & Customer Service</li>
+        </ul>
+    </div>
+
+    <!-- HOBBIES -->
+    <div class="section">
+        <h3>Hobbies</h3>
+        <ul>
+            <li>Reading books</li>
+            <li>Listening to music & exploring playlists</li>
+            <li>Taking photos</li>
+            <li>Watching lifestyle, beauty & vlog content</li>
+            <li>Café hopping & trying new drinks</li>
+            <li>Organising + decorating</li>
+        </ul>
+    </div>
+
+    <!-- FAVOURITE THINGS -->
+    <div class="section">
+        <h3>Favourite Things</h3>
+        <ul>
+            <li><strong>Favourite Food:</strong> Aglio Olio Pasta 🍝</li>
+            <li><strong>Favourite Drink:</strong> Matcha Latte 🍵</li>
+            <li><strong>Favourite Movies:</strong>
+                <ul>
+                    <li>Princess Diaries 👑</li>
+                    <li>Harry Potter Series ✨</li>
+                </ul>
+            </li>
+            <li><strong>Favourite Colours:</strong> Pink & Lilac 🎀</li>
+            <li><strong>Favourite Genre:</strong> R&B, Chill Pop, Soft Vibes 🎧</li>
+            <li><strong>Favourite Animal:</strong> Panda 🐼 & Fish 🐟 (Nami!)</li>
+        </ul>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="section">
+        <h3>Languages</h3>
+        <ul>
+            <li>Malay (Native)</li>
+            <li>English (Fluent)</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- -------------------- FOOTER -------------------- -->
+<footer>
+    COPYRIGHT © Ermi Safiyyah 2025
+</footer>
+
+<script>
+function updateClock(){
+  let d = new Date();
+  let hh = ('0'+d.getHours()).slice(-2);
+  let mm = ('0'+d.getMinutes()).slice(-2);
+  let ss = ('0'+d.getSeconds()).slice(-2);
+  document.getElementById('clock').textContent = hh+":"+mm+":"+ss;
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

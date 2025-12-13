@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gallery - Ermi Safiyyah</title>
+
+<style>
+/* -------------------- FONT -------------------- */
+@font-face {
+    font-family: 'MotleyForces';
+    src: url('MotleyForcesRegular-w1rZ3.ttf') format('truetype');
+}
+
+/* -------------------- GLOBAL -------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'MotleyForces', cursive;
+    background: #FFD7E5;
+    color: #4a0032;
+    overflow-x: hidden;
+}
+
+/* -------------------- FLOATING DECOR -------------------- */
+.floating {
+    position: fixed;
+    bottom: -30px;
+    font-size: 28px;
+    animation: floatUp 7s infinite ease-in-out;
+    opacity: 0.7;
+    z-index: 9999;
+}
+.f1 { left: 10%; animation-delay: 0s; }
+.f2 { left: 25%; animation-delay: 1s; }
+.f3 { left: 40%; animation-delay: 2s; }
+.f4 { left: 55%; animation-delay: 1.5s; }
+.f5 { left: 70%; animation-delay: 2.5s; }
+.f6 { left: 85%; animation-delay: 0.5s; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-200px) scale(1.3); opacity: 1; }
+    100% { transform: translateY(-350px) scale(0.8); opacity: 0; }
+}
+
+/* -------------------- NAVBAR -------------------- */
+nav {
+    background:#ffe6f7;
+    padding:16px;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    border-bottom:3px solid #ffb3d6;
+    box-shadow:0 4px 10px rgba(255,150,200,0.35);
+    font-size: 40px;
+}
+
+nav a {
+    text-decoration:none;
+    margin-right:18px;
+    font-size:26px;
+    color:#b3006b;
+    padding:6px 10px;
+    transition:0.3s;
+}
+
+nav a:hover {
+    color:#ff0088;
+    transform:scale(1.1);
+}
+
+nav img { border-radius:10px; }
+
+#clock {
+    background:#ffd1e8;
+    padding:4px 10px;
+    font-size:22px;
+    border-radius:8px;
+    margin-left:14px;
+}
+
+/* -------------------- HEADER -------------------- */
+.header {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-bottom: 3px solid #FFB6C1;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 90px;
+    color: white;
+    text-shadow: 4px 4px 12px #FF69B4;
+}
+
+/* -------------------- MAIN GALLERY SECTION -------------------- */
+.music-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 35px;
+    background: rgba(255,255,255,0.75);
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(255,170,205,0.4);
+    text-align: center;
+}
+
+h2 {
+    color:#B3007C;
+    text-shadow:1px 1px 3px #ff99cc;
+    margin-top: 35px;
+}
+
+/* -------------------- GALLERY CARDS -------------------- */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 230px;
+    height: 230px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255,150,200,0.3);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background: #ffe6f7;
+    color: #b3006b;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(255,150,200,0.3);
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    margin-top: 40px;
+    background: #ffe1f2;
+    border-top: 4px solid #ff9acb;
+    padding: 25px 0;
+    font-size: 25px;
+    color: #4a0032;
+    text-align: center;
+    width: 100%;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 12px rgba(255,150,200,0.35);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING DECOR -->
+<div class="floating f1">✨</div>
+<div class="floating f2">🎵</div>
+<div class="floating f3">🌟</div>
+<div class="floating f4">🎶</div>
+<div class="floating f5">✨</div>
+<div class="floating f6">🎵</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="assingment.html">Home</a>
+  <a href="edu.html">Education</a>
+  <a href="biodata.html">Biodata</a>
+  <a href="family.html">Family</a>
+  <a href="music.html">Music</a>
+  <a href="book.html">Book</a>
+  <a href="food.html">Food</a>
+  <a href="gallery.html">Gallery</a>
+
+  <span style="margin-left:auto; display:flex; align-items:center;">
+    <a href="https://x.com/ermihzmy" target="_blank"><img src="icon.jpg" width="32"></a>
+    <a href="https://www.instagram.com/ermi.hzmy" target="_blank"><img src="icon.jpg" width="32" style="margin-left:10px;"></a>
+    <span id="clock">00:00:00</span>
+  </span>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="galleryy.jpg" class="bg-img">
+    <div class="header-title">GALLERY</div>
+</div>
+
+<!-- GALLERY SECTION -->
+<div class="music-section">
+  <h2>📸 My Gallery</h2>
+
+  <div class="gallery">
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="familyy.jpeg"></div><div class="flip-card-back">My favorite crew 💓✨.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="parents.jpeg"></div><div class="flip-card-back">The OG lovebirds 🕊️❤️.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="pic 1.jpeg"></div><div class="flip-card-back">Me, Dad & Brother as kids 👶👦👨❤️ .</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="pic 2.jpeg"></div><div class="flip-card-back">Me, Mom & Brother ❤️👩‍👧‍👦💖.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="frog.jpeg"></div><div class="flip-card-back">Me & the youngest 🥰👶💖.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="hadifff.jpeg"></div><div class="flip-card-back">Me & my only brother 👦.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="merc.jpeg"></div><div class="flip-card-back">Mercedes fan since day one 🏎️💨.</div></div></div>
+    <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="babyme.jpeg"></div><div class="flip-card-back">Tiny me, big dreams 💖.</div></div></div>
+  </div>
+</div>
+
+<footer>
+  Copyright © Ermi Safiyyah 2025
+</footer>
+
+<!-- CLOCK SCRIPT -->
+<script>
+function updateClock(){
+  const d = new Date();
+  const hh = String(d.getHours()).padStart(2,'0');
+  const mm = String(d.getMinutes()).padStart(2,'0');
+  const ss = String(d.getSeconds()).padStart(2,'0');
+  document.getElementById('clock').textContent = `${hh}:${mm}:${ss}`;
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+</body>
+</html>
