@@ -1,158 +1,302 @@
+/* ================= FONT ================= */
 @font-face {
     font-family: 'MotleyForces';
     src: url('MotleyForcesRegular-w1rZ3.ttf') format('truetype');
 }
 
-body {
-    background:#FFD7E5;
-    color:#4a0032;
-    font-family:'MotleyForces', cursive;
-    margin:0;
-    padding-top:100px;
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MotleyForces', cursive;
 }
 
-/* NAVIGATION BAR */
+body {
+    background: #FFD7E5;
+    color: #4a0032;
+    padding-top: 100px;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
 nav {
-    background:#ffe6f7;
-    padding:16px;
-    width:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:999;
-    display:flex;
-    align-items:center;
-    border-bottom:3px solid #ffb3d6;
-    box-shadow:0 4px 10px rgba(255,150,200,0.35);
+    width: 100%;
+    background: #ffe6f7;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    border-bottom: 3px solid #ffb3d6;
+    box-shadow: 0 4px 10px rgba(255,150,200,0.35);
 }
 
 nav a {
-    text-decoration:none;
-    margin-right:18px;
-    font-size:22px;
-    color:#b3006b;
-    padding:6px 10px;
-    transition:0.3s;
+    text-decoration: none;
+    margin-right: 18px;
+    font-size: 22px;
+    color: #b3006b;
+    padding: 5px 8px;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    color:#ff0088;
-    transform:scale(1.1);
+nav a:hover, nav a.active {
+    color: #ff0088;
+    transform: scale(1.1);
 }
 
 nav img {
-    border-radius:10px;
+    border-radius: 10px;
 }
 
-/* CLOCK */
+nav .right-icons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 #clock {
-    background:#ffd1e8;
-    padding:4px 10px;
-    font-size:18px;
-    border-radius:8px;
-    margin-left:14px;
+    background: #ffd1e8;
+    padding: 4px 10px;
+    font-size: 18px;
+    border-radius: 8px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
-    position:relative;
-    width:100%;
-    height:260px;
-    overflow:hidden;
-    border-bottom:3px solid #FFB6C1;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 3px solid #ffb3d6;
 }
 
-.header .bg-img {
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.header img, .header .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .header-title {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    font-size:72px;
-    color:white;
-    text-shadow:4px 4px 12px #FF69B4;
-    letter-spacing:3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    text-shadow: 4px 4px 12px hotpink;
 }
 
-/* BUTTERFLIES */
-.butterfly {
-    position:absolute;
-    font-size:32px;
-    opacity:0.8;
-    animation:fly 8s infinite ease-in-out;
+/* ================= FLOATING ICONS / DECOR ================= */
+.float, .cake, .floating {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0.7;
+    animation: fly 7s infinite ease-in-out;
 }
 
-.b1 { left:10%; bottom:-20px; animation-delay:0s; }
-.b2 { left:28%; bottom:-20px; animation-delay:1s; }
-.b3 { left:46%; bottom:-20px; animation-delay:2s; }
-.b4 { left:64%; bottom:-20px; animation-delay:3s; }
-.b5 { left:82%; bottom:-20px; animation-delay:1.5s; }
-.b6 { left:50%; bottom:-20px; animation-delay:2.5s; }
+.f1 { left: 10%; animation-delay: 0s; }
+.f2 { left: 25%; animation-delay: 1s; }
+.f3 { left: 40%; animation-delay: 2s; }
+.f4 { left: 55%; animation-delay: 1.5s; }
+.f5 { left: 70%; animation-delay: 2.5s; }
+.f6 { left: 85%; animation-delay: 0.5s; }
+
+.c1 { left: 15%; top: 60px; }
+.c2 { left: 35%; top: 60px; }
+.c3 { left: 55%; top: 60px; }
+.c4 { left: 75%; top: 60px; }
 
 @keyframes fly {
-    0%   { transform: translateY(0) rotate(0deg); opacity:0.3; }
-    50%  { transform: translateY(-140px) rotate(15deg); opacity:1; }
-    100% { transform: translateY(0) rotate(-5deg); opacity:0.4; }
+    0% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-120px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(0) scale(0.9); opacity: 0.4; }
 }
 
-/* CONTENT */
-.container {
-    max-width:900px;
-    margin:30px auto;
-    background:rgba(255,255,255,0.7);
-    padding:30px 35px;
-    border-radius:14px;
-    box-shadow:0 0 20px rgba(255,170,205,0.4);
-    text-align:center;
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-200px) scale(1.3); opacity: 1; }
+    100% { transform: translateY(-350px) scale(0.8); opacity: 0; }
 }
 
-.container img {
-    width:180px;
-    border-radius:18px;
-    box-shadow:0 0 15px rgba(255,120,170,0.4);
-    margin-bottom:20px;
+/* ================= PAGE CONTAINER ================= */
+.container, .book-section, .music-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 35px;
+    background: rgba(255,255,255,0.75);
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(255,150,200,0.35);
+    text-align: center;
 }
 
-h2 {
-    font-size:48px;
-    color:#b3006b;
-    text-shadow:2px 2px #ffd1e8;
-    margin-bottom:20px;
+/* ================= PAGE TITLES ================= */
+.page-title, h2 {
+    text-align: center;
+    color: #b3007c;
+    font-size: 38px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px #ff99cc;
 }
 
-p {
-    font-size:22px;
-    line-height:1.8;
-    text-align:justify;
-    max-width:850px;
-    margin:0 auto 15px;
+/* ================= FAMILY / GENERIC CARDS ================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
-audio {
-    width:100%;
-    margin-top:15px;
-    border-radius:12px;
+.card, .food-item {
+    background: rgba(255,255,255,0.78);
+    padding: 18px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(255,150,200,0.25);
+    transition: 0.25s;
 }
 
-marquee {
-    font-size:22px;
+.card:hover, .food-item:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 14px 30px rgba(255,120,180,0.32);
 }
 
-/* FOOTER */
+.photo, .food-item img {
+    width: 150px;
+    height: 235px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 4px solid #ffd6ea;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 18px rgba(255,120,170,0.2);
+}
+
+/* Card text */
+.card h3, .book-section h3 {
+    margin: 6px 0 4px;
+    color: #b3007c;
+    font-size: 20px;
+}
+
+.role, .card p, .food-name {
+    font-size: 14px;
+    color: #7a2a4a;
+    margin-bottom: 8px;
+}
+
+/* ================= ICON ROW ================= */
+.icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+/* ================= FOOD GALLERY ================= */
+.food-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* ================= IMAGE MAP ================= */
+.map-image img {
+    width: 50%;
+    max-width: 220px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255,150,200,0.35);
+}
+
+/* ================= GOOGLE MAP ================= */
+.map-container iframe {
+    width: 80%;
+    height: 400px;
+    border: 4px solid #ffb3d6;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255,150,200,0.35);
+}
+
+/* ================= BOOK CARDS ================= */
+.book-card, .flip-card {
+    width: 220px;
+    height: 300px;
+    perspective: 1000px;
+    margin: auto;
+}
+
+.book-inner, .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255,150,200,0.3);
+}
+
+.book-card:hover .book-inner, .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.book-front, .book-back, .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.book-front img, .flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-back, .flip-card-back {
+    background: #ffe6f7;
+    color: #b3006b;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+
+/* ================= STAR RATING ================= */
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.stars span {
+    font-size: 22px;
+    color: #ff9acd;
+    transition: .2s;
+}
+
+.stars span.active {
+    color: #ff0077;
+    transform: scale(1.2);
+}
+
+/* ================= FOOTER ================= */
 footer {
-    margin-top:40px;
-    background:#ffe1f2;
-    border-top:4px solid #ff9acb;
-    padding:25px 0;
-    font-size:20px;
-    color:#4a0032;
-    text-align:center;
-    width:100%;
-    border-radius:18px 18px 0 0;
-    box-shadow:0 -4px 12px rgba(255,150,200,0.35);
+    margin-top: 40px;
+    background: #ffe1f2;
+    border-top: 4px solid #ff9acb;
+    padding: 25px;
+    text-align: center;
+    font-size: 20px;
+    color: #4a0032;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 12px rgba(255,150,200,0.35);
 }
